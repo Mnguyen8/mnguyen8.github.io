@@ -3,14 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Home Page</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 56px; /* Adjust for fixed navbar */
+            background-color: #2B2A33;
+            color: white;
+            min-height: 100vh; 
+            position: relative;
+        }
+        .jumbotron {
+          background-color: #d3f0f2;
+          padding: 2rem 1rem;
+          margin-top:  2rem;
+          margin-bottom: 2rem;
+          border-radius: .3rem;
+          color: #072426;
+        }
+        .navbar-brand-logo {
+          display: flex;
+          align-items: center;
+          color: black;
+        }
+
+        .navbar-brand-logo img {
+          margin-right: 10px; /* Space between image and text */
+          height: 30px; /* Adjust image height as needed */
+        }
+        .homelogo{
+            width: 25%;
+            height: 25%;
+        }
+        .navbar{
+            background-color: white;
+        }
+        .row{
+            text-align: center;
+        }
+        .qrshare{
+            width: 10%;
+            height: 10%;
+           }
+        .QRCodeDiv{
+            left:50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            position: absolute;
+            color: #db7f1d;
+            width: 15%;
+            text-align: center;
+            font-size: 75%;
+            font-color: #eb8f17;
+        }
+        .QRCode{
+            color: #eb8f17;
+        }
+        @media(max-width:767.98px){
+            .QRCodeDiv{
+                font-size: 100%;
+                width: 50%;
+            }
+        }
+        
+    </style>
 </head>
 <body>
-    <script>
-        setTimeout(function() {
-            window.location.href = "https://mnguyen8.github.io/resume/"; // Replace with your destination URL
-        },0); // 3000 milliseconds = 3 seconds
-    </script>
 
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-brand-logo" href="#">
+                <img src="./images/logo.svg" alt="Logo">
+                Michael's GitHub Network
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+            <div class="jumbotron">
+            <h1 class="display-4">Welcome to Michael's GitHub Network!</h1>
+            <img src="./images/logo.svg" alt="Logo" class="homelogo">
+            <p class="lead">This my website to host my resume and some projects, old and potentially new.</p>
+            <hr class="my-4">
+            <p>Check out what I'm up to below.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>About me</h2>
+                <p>Learn a bit more about me and my passion for technology.</p>
+                <a href="./about.html" class="btn btn-primary">About Me</a>
+            </div>
+            <div class="col-md-4">
+                <h2>Resume</h2>
+                <p>Come see what I'm currently up to and what I've learned so far.</p>
+                <a href="./resume.html" class="btn btn-success">View Resume</a>
+            </div>
+            <div class="col-md-4">
+            <h2>GitHub</h2>
+            <p>Take a look at some of my projects both old and new.</p>
+            <a href="https://github.com/Mnguyen8" class="btn btn-info" target="_blank">View GitHub</a>
+        </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <div class="QRCodeDiv">
+                <a href="./qr.html" class="QRCode"><img src="./images/share.svg" alt="share" class="qrshare">Share me with QR Code.</a>
+            </div>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,9 +1,16 @@
+
 <script>
     window.onload = () => {
+        count = 0;
         currentURL = window.location.href;
         lowerCaseURL = currentURL.toLowerCase();
         if (currentURL != lowerCaseURL) {
             location.replace(lowerCaseURL);
+            count++;
         }
+        if (count <= 3) {
+            setTimeout(() => {
+                window.location.href = "./index.html"; // Replace with your desired URL
+            }, 3000); // 3000 milliseconds = 3 seconds
     };
 </script>
