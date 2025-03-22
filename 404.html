@@ -1,16 +1,74 @@
-
-<script>
-    window.onload = () => {
-        count = 0;
-        currentURL = window.location.href;
-        lowerCaseURL = currentURL.toLowerCase();
-        if (currentURL != lowerCaseURL) {
-            location.replace(lowerCaseURL);
-            count++;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <link rel="icon" type="image/x-icon" href="./images/logo.svg">
+    <style>
+        .navbar-brand-logo {
+          display: flex;
+          align-items: center;
+          color: black;
         }
-        if (count <= 3) {
-            setTimeout(() => {
-                window.location.href = "./index.html"; // Replace with your desired URL
-            }, 3000); // 3000 milliseconds = 3 seconds
-    };
-</script>
+
+        .navbar-brand-logo img {
+          margin-right: 10px; /* Space between image and text */
+          height: 30px; /* Adjust image height as needed */
+        }
+        .homelogo{
+            width: 25%;
+            height: 25%;
+        }
+        .navbar{
+            background-color: white;
+        }
+        body{
+            background-color: #2B2A33;
+            color: white;
+
+        }
+        #redirectMessage {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-brand-logo" href="#">
+                <img src="./images/logo.svg" alt="Logo">
+                Michael's GitHub Network
+            </a>
+        </div>
+    </nav>
+    <div id="redirectMessage"></div>
+
+    <script>
+        window.onload = () => {
+            currentURL = window.location.href;
+            lowerCaseURL = currentURL.toLowerCase();
+
+            if (currentURL != lowerCaseURL) {
+                location.replace(lowerCaseURL);
+            } else {
+                let countdown = 3;
+                const messageDiv = document.getElementById('redirectMessage');
+
+                function updateMessage() {
+                    messageDiv.textContent = `Redirecting in ${countdown} seconds...`;
+                    countdown--;
+
+                    if (countdown >= 0) {
+                        setTimeout(updateMessage, 1000); // Update every second
+                    } else {
+                        window.location.href = "https://mnguyen8.github.io/index.html"; // Replace with your desired URL
+                    }
+                }
+
+                updateMessage(); // Start the countdown
+            }
+        };
+    </script>
+</body>
+</html>
