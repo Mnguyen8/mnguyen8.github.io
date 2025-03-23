@@ -26,10 +26,19 @@
             color: white;
 
         }
+        .chain{
+            color: #eb8f17;
+        }
         #redirectMessage {
             text-align: center;
             margin-top: 20px;
             font-size: 1.2em;
+        }
+        #redirectImage{
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+            height: auto;
         }
     </style>
 </head>
@@ -44,6 +53,11 @@
     </nav>
     <div id="redirectMessage"></div>
 
+    <div>
+        <p id="redirectMessage">Click <a href="https://mnguyen8.github.io/" class="chain">here</a> to redirect to home page.</p>
+        <a href="https://mnguyen8.github.io/"><img id="redirectImage" src="./images/logo.svg" alt="MGN Logo"></a>
+    </div>
+
     <script>
         window.onload = () => {
             currentURL = window.location.href;
@@ -54,19 +68,20 @@
             } else {
                 let countdown = 3;
                 const messageDiv = document.getElementById('redirectMessage');
+                const image = document.getElementById('redirectImage');
 
                 function updateMessage() {
-                    messageDiv.textContent = `Redirecting in ${countdown} seconds...`;
+                    messageDiv.textContent = `Uh oh, something happened?! You will be redirected to the home page in ${countdown} seconds...`;
                     countdown--;
 
                     if (countdown >= 0) {
-                        setTimeout(updateMessage, 1000); // Update every second
+                        setTimeout(updateMessage, 1000); 
                     } else {
-                        window.location.href = "https://mnguyen8.github.io/index.html"; // Replace with your desired URL
+                        window.location.href = "https://mnguyen8.github.io/"; 
                     }
                 }
 
-                updateMessage(); // Start the countdown
+                updateMessage();
             }
         };
     </script>
