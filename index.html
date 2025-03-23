@@ -14,15 +14,19 @@
             min-height: 100vh; 
             position: relative;
         }
-        .jumbotron {
-          background-color: #d3f0f2;
-          padding: 2rem 1rem;
-          margin-top:  2rem;
-          margin-bottom: 2rem;
-          border-radius: .3rem;
-          color: #072426;
+        .jumbotron-bg {
+            position: relative; /* Important for positioning the pseudo-element */
+            background-color: #d3f0f2;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: .3rem;
+            color: white;
+            background-image: url("./images/city.svg");
+            background-size: cover;
+            background-position: center;
         }
-        .navbar-brand-logo {
+      .navbar-brand-logo {
           display: flex;
           align-items: center;
           color: black;
@@ -34,7 +38,11 @@
         }
         .homelogo{
             width: 25%;
-            height: 25%;
+            height: auto;
+            position: absolute;
+            right: 2px;
+            bottom: 2px;
+            z-index: 3;
         }
         .navbar{
             background-color: white;
@@ -51,7 +59,6 @@
             transform: translateX(-50%);
             bottom: 0;
             position: absolute;
-            color: #db7f1d;
             width: 15%;
             text-align: center;
             font-size: 75%;
@@ -98,12 +105,17 @@
     </nav>
 
     <main class="container">
-            <div class="jumbotron">
-            <h1 class="display-4">Welcome to Michael's GitHub Network!</h1>
-            <img src="./images/logo.svg" alt="Logo" class="homelogo">
-            <p class="lead">This my website to host my resume and some projects, old and potentially new.</p>
-            <hr class="my-4">
-            <p>Check out what I'm up to below.</p>
+            <div class="jumbotron-bg">
+                <div class="vis">
+                    <div class="jfont">
+                        <h1 class="display-4">Welcome to Michael's GitHub Network!</h1>
+                        <img src="./images/logo.svg" alt="Logo" class="homelogo">
+                        <p class="lead">This my website to host my resume and some projects, old and potentially new.</p>
+                        <br>
+                        <p>Check out what I'm up to below.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">
